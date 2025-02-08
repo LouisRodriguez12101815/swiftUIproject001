@@ -1,0 +1,55 @@
+//
+//  ContentView.swift
+//  ChatPrototype
+//
+//  Created by student on 2/8/25.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    @State private var backgroundColor: Color = .white  // Default background color
+    
+    var body: some View {
+        VStack(spacing: 20) {
+            Button(action: { backgroundColor = .blue }) {
+                Text("Turn Blue")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue.opacity(0.3)))
+                    .foregroundColor(.blue)
+            }
+
+            Button(action: { backgroundColor = .red }) {
+                Text("Turn Red")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.red.opacity(0.3)))
+                    .foregroundColor(.red)
+            }
+            
+            Button(action: { backgroundColor = .green }) {
+                Text("Turn Green")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.green.opacity(0.3)))
+                    .foregroundColor(.green)
+            }
+            
+            Button(action: { backgroundColor = .yellow }) {
+                Text("Turn Yellow")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.yellow.opacity(0.3)))
+                    .foregroundColor(.yellow)
+            }
+        }
+        .padding()
+        .background(backgroundColor) // Change background dynamically
+        .edgesIgnoringSafeArea(.all) // Ensure background covers the whole screen
+    }
+}
+
+#Preview {
+    ContentView()
+}
